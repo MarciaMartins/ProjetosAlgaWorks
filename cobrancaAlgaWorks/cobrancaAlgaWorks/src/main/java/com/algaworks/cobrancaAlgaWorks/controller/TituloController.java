@@ -1,11 +1,16 @@
 package com.algaworks.cobrancaAlgaWorks.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.algaworks.cobrancaAlgaWorks.model.StatusTitulo;
 import com.algaworks.cobrancaAlgaWorks.model.Titulo;
 import com.algaworks.cobrancaAlgaWorks.repository.Titulos;
 
@@ -26,7 +31,13 @@ public class TituloController {
 		System.out.println(">>Gravação das informações no BD<<");
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
 		mv.addObject("mensagem", "Título salvo com sucesso!");
+		
 		titulos.save(titulo);
 		return mv;
+	}
+	
+	@ModelAttribute("todosStatusTitulo")
+	public List<StatusTitulo> todosStatusTitulo(){
+		return Arrays.asList(StatusTitulo.values());
 	}
 }
