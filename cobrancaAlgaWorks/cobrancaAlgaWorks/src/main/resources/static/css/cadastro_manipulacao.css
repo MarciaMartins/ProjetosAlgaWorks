@@ -1,0 +1,42 @@
+.form-produto{
+  padding: 1em;
+  border: 2px solid black;
+}
+
+#obrigatorio{
+
+}
+
+.item-form{
+    padding: 2px;
+}
+
+.form-radio-confirm{
+  margin-top: 0px;
+}
+
+.bloco-contexto{
+    display: ;
+}
+
+.item-form-preco{
+  padding: 2px;
+}
+
+.item-form-preco p{
+    padding: 1px;
+    margin: 0px;
+}
+
+.form-radio-confirm p{
+    padding: 1px;
+    margin: 0px;
+}
+
+
+
+.form-botton{
+  text-align: center;
+  padding-top: 20px;
+
+}
