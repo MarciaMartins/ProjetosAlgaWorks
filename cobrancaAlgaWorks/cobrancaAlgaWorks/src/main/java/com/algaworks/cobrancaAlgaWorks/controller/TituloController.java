@@ -33,6 +33,7 @@ public class TituloController {
 		mv.addObject("mensagem", "Título salvo com sucesso!");
 		
 		titulos.save(titulo);
+		System.out.println(">>Banco<<");
 		return mv;
 	}
 	
