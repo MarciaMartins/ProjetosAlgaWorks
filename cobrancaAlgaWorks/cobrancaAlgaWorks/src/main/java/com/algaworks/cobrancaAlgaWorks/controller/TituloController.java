@@ -37,6 +37,12 @@ public class TituloController {
 		return mv;
 	}
 	
+	@RequestMapping
+	public String pesquisar(Titulos titulos) {
+		List<titulos> listaTitulos = titulos.findAll();
+		return "PesquisaTitulos";
+	}
+	
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){
 		return Arrays.asList(StatusTitulo.values());
