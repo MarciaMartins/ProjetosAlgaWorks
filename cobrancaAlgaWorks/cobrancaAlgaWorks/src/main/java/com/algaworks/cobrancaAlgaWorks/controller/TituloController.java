@@ -39,7 +39,7 @@ public class TituloController {
 	
 	@RequestMapping
 	public String pesquisar(Titulos titulos) {
-		List<titulos> listaTitulos = titulos.findAll();
+		
 		return "PesquisaTitulos";
 	}
 	
