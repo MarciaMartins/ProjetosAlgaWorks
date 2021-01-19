@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +29,16 @@ public class TituloController {
 	public ModelAndView novo() {
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
 		mv.addObject(new Titulo());
+		return mv;
+	}
+	
+	
+	@RequestMapping("{codigo}")
+	public ModelAndView edicao(@PathVariable("codigo") Long codigoTitulo) {
+		Titulo titulo = titulos.getOne(codigoTitulo);
+		System.out.println(">>Código "+ codigoTitulo);
+		ModelAndView mv = new ModelAndView("CadastroTitulo"); 
+		mv.addObject(titulo);
 		return mv;
 	}
 	
@@ -54,6 +65,9 @@ public class TituloController {
 		mv.addObject("titulos", todosTitulos);
 		return mv;
 	}
+	
+	
+	
 	
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){
