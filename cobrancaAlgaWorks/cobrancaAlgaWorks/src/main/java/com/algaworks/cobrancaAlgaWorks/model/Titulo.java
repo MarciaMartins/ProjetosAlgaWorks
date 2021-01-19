@@ -46,10 +46,10 @@ public class Titulo {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Date getDataDeVencimento() {
+	public Date getDataVencimento() {
 		return dataVencimento;
 	}
-	public void setDataDeVencimento(Date dataVencimento) {
+	public void setDataVencimento(Date dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
 	

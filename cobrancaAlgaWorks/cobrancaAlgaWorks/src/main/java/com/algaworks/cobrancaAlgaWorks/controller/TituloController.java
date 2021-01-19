@@ -28,12 +28,11 @@ public class TituloController {
 	
 	@RequestMapping( method =RequestMethod.POST )
 	public ModelAndView salvar(Titulo titulo) {
-		System.out.println(">>Gravação das informações no BD<<");
 		ModelAndView mv = new ModelAndView("CadastroTitulo");
-		mv.addObject("mensagem", "Título salvo com sucesso!");
-		
-		titulos.save(titulo);
 		System.out.println(">>Banco<<");
+		titulos.save(titulo);
+		mv.addObject("mensagem", "Título salvo com sucesso!");
+		System.out.println(">>"+ titulo.getDataVencimento());
 		return mv;
 	}
 	
